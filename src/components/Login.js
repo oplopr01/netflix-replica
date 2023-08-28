@@ -11,6 +11,7 @@ const Login = () => {
     const app = initializeApp(firebaseConfig)
     const [email, setEmail ]=useState("")
     const [password, setPassword] = useState("")
+    const [isUserExist, setUserExist] = useState(false)   //to show error msg if user not exist after submitting
     const auth = getAuth()
     const onSignInClickHandler = (e)=>{
         e.preventDefault() //default me button ko disable banane k liy
@@ -19,7 +20,7 @@ const Login = () => {
             if(auth){
                 navigate('/dashboard')
             }
-        } ).catch(error =>alert(error.message))
+        } ).catch(() =>setUserExist(true))
     }
 
     const emailOnChangeHandler=(e)=>{
@@ -58,7 +59,9 @@ const Login = () => {
                 </form>
                 <br />
                 <br />
-                <div className="login-form-other">
+                { isUserExist && <p className="text-danger">User does not exist</p>}  {/*it will conditionaly show error message*/} 
+                
+                <div className="login-form-other"> 
                     <div className="login-signup-now"> New to Netflix ? &nbsp;
                         <a className=" " target ="_self" href="/"> Sign up now</a>.
                     </div>
