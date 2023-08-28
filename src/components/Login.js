@@ -1,5 +1,30 @@
 
+import {useNavigate} from "react-router-dom"
+import {initializeApp} from "firebase/app"
+import {getAuth, signInWithEmailAndPassword} from "firebase/auth"
+import {firebaseConfig} from "./firebaseConfig"
+import {useState} from "react"
+
+
 const Login = () => {
+    const navigate = useNavigate()
+    const app = initializeApp(firebaseConfig)
+    const [email, setEmail ]=useState("")
+    const [password, setPassword] = useState("")
+    const auth = getAuth()
+    const onSignInClickHandler = (e)=>{
+        e.preventDefault() //default me button ko disable banane k liy
+        signInWithEmailAndPassword(auth, email, password)
+        .then( auth=>{
+            if(auth){
+                navigate('/dashboard')
+            }
+        } ).catch(error =>alert(error.message))
+    }
+
+    const emailOnChangeHandler=(e)=>{
+        setEmail(e.target.value)
+    }
 
     return (
         <div className="login">
@@ -10,12 +35,16 @@ const Login = () => {
                     <input
                         className="form-control"
                         type="email"
+                        value={email}
+                        onChange={emailOnChangeHandler}
                         placeholder="Email" />
                     <input
                         className="form-control"
                         type="password"
+                        value={password}
+                        onChange={(e)=>setPassword(e.target.value)}
                         placeholder="Password" />
-                    <button className="btn btn-danger btn-block">
+                    <button className="btn btn-danger btn-block" onClick={onSignInClickHandler}>
                         Sign In
                     </button>
                     <br />
