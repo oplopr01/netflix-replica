@@ -38,8 +38,14 @@ onSignInClickHandler-: it handels signin button click event. where it contains a
  
 ==================================================================
 
+[commit-4]--
 
-
+--ERROR HANDLING--
+- added feature to show error message inside form boundary instead showing on browser window.
+if user do not put correct credentials error will be shown inside form.
  
+
+==================================================================
+
 
 
