@@ -25,12 +25,14 @@ Card-:
 ==================================================================
 
 [commit 3]--
--created firebaseConfig component inside components directory. added data which provided at firebase project creation time.
+- created firebaseConfig component inside components directory. added data which provided at firebase project creation time.
 
 - in "Login" component created emailOnChangeHandler, passwordOnChangeHandler(inline),  and onSignInClickHandler functions. using React state for dynamicaly handeling values of email and password. 
 
 emailOnChangeHandler-: this function handels the value adding in Input html element so when user type any character of email so it would visible inside box.
+
 passwordOnChangeHandler-: it also has same functionality as email handler but it reflects result in password element.
+
 onSignInClickHandler-: it handels signin button click event. where it contains a promise to authenticate user that its legitimate or not.
 
  
