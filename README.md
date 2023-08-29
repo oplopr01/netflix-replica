@@ -48,4 +48,12 @@ if user do not put correct credentials error will be shown inside form.
 ==================================================================
 
 
+[commit 5]--
+
+--REUSING COMPONENT--
+- in previous code i used Login component to take user input for authentication purpose. now if i have create a signup/register form i can create another component to handle this task. but i can see most of the form elements which i have used in Login comp i have to use same for this too with some changes.
+so instead maknig new component and doing that much code again i will use previous Login component and change required portion dynamically.
+
+
+
 

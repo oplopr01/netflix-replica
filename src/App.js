@@ -21,6 +21,14 @@ function App() {
 
           <Route path="/login" element={
             <React.Fragment>
+              <Header/>
+              <Login />
+            </React.Fragment>
+          } />
+
+          <Route path="/register" element={
+            <React.Fragment>
+              <Header/>
               <Login />
             </React.Fragment>
           } />
@@ -28,7 +36,9 @@ function App() {
 
           <Route path="/dashboard" element={
             <React.Fragment>
-              <Login />
+              <Header/>
+              <Banner/>
+              <List/>
             </React.Fragment>
           } />
         </Routes>
