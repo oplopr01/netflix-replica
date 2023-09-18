@@ -13,14 +13,14 @@ created this project body using "create-react-app" added index.html, index.js, i
 ==================================================================
 
 [commit 2]--
-created directory named "components" in src folder and created different component's- Header, HomeBanner, Login, List, Card, Banner
+created directory named "components" in src folder and created different components-Header, HomeBanner, Login, List, Card, Banner
  
 Header-: to handle Navbar of the app
 HomeBanner-: to Handle appearance of Banner at home page/ main page
 Login-: to handel User login/signup feature
 List-: to handel list of shows(movies, series).
 Banner-: handeling children banner which will appear after clicking on a items from list respectively.
-Card-: 
+Card-:
 
 ==================================================================
 
